@@ -1,0 +1,57 @@
+@import './../../index.scss';
+
+.chatlist {
+	width: 25rem;
+	border-right: 2px solid $grey;
+	display: flex;
+	flex-direction: column;
+	max-height: fit-content;
+
+	.head {
+		background-color: $grey;
+		padding: 1rem;
+
+		.ava {
+			background-color: #fff;
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			margin-bottom: 1rem;
+		}
+		.input {
+			display: flex;
+			width: 100%;
+			padding: 0.5rem;
+			border-radius: 2rem;
+			background-color: #fff;
+			input {
+				font-style: italic;
+				width: 100%;
+				margin-left: 0.4rem;
+				font-size: 1rem;
+				outline: none;
+			}
+		}
+	}
+	p {
+		color: $blue;
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 2rem;
+	}
+
+	.chats {
+		height: 100px;
+		flex-grow: 1;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			background-color: white;
+			width: 15px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $light;
+			border-radius: 20px;
+			border: 4px solid white;
+		}
+	}
+}

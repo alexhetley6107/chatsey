@@ -1,0 +1,18 @@
+@import './../../index.scss';
+
+header {
+	background-color: $black;
+	padding: 1rem;
+	padding-top: 0.7rem;
+
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	.title {
+		color: white;
+		font-size: 2rem;
+		line-height: 1.6rem;
+		margin-left: 0.5rem;
+	}
+}

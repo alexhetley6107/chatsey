@@ -1,0 +1,29 @@
+@import './../../../index.scss';
+
+.message,
+.your_mes {
+	margin: 0.8rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	.text {
+		background-color: $black;
+		color: white;
+		width: fit-content;
+		padding: 0.6rem 1rem;
+		border-radius: 2rem;
+		font-size: 1.2rem;
+	}
+	.date {
+		margin: 0 0.5rem;
+	}
+}
+
+.your_mes {
+	align-items: flex-end;
+	.text {
+		background-color: $blue;
+		// color: $black;
+	}
+}
