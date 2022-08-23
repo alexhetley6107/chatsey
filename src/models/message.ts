@@ -1,7 +1,7 @@
 type Message = {
+	id: string;
 	text: string;
 	date: Date;
-	// authorId: string;
 	isYour: boolean;
 };
 

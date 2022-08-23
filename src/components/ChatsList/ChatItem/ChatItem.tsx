@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Chat from '../../../models/chat';
+import formatDate from '../../../utils/formatDate';
+import formatTime from '../../../utils/formatTime';
 import s from './ChatItem.module.scss';
 
 type Props = {
@@ -8,7 +10,10 @@ type Props = {
 };
 
 function ChatItem({ chat }: Props) {
-	const { name } = chat;
+	const { name, messages } = chat;
+
+	const lastMessageText = messages[messages.length - 1]?.text;
+	const lastMessageDate = formatDate(messages[messages.length - 1]?.date);
 
 	return (
 		<Link to={`/${name}`}>
@@ -16,9 +21,9 @@ function ChatItem({ chat }: Props) {
 				<div className={s.ava}></div>
 				<div className={s.info}>
 					<div className={s.name}>{name}</div>
-					<div className={s.message}>Hello there my verifing </div>
+					<div className={s.message}>{lastMessageText}</div>
 				</div>
-				<div className={s.date}>Jun 12.2022</div>
+				<div className={s.date}>{lastMessageDate ? lastMessageDate : ''}</div>
 			</div>
 		</Link>
 	);

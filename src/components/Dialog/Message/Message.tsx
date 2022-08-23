@@ -1,5 +1,7 @@
 import React from 'react';
 import Message from '../../../models/message';
+import formatDate from '../../../utils/formatDate';
+import formatTime from '../../../utils/formatTime';
 
 import s from './Message.module.scss';
 
@@ -9,10 +11,16 @@ type Props = {
 
 function MessageComponent({ message }: Props) {
 	const { text, date, isYour } = message;
+
+	const day = formatDate(date);
+	const time = formatTime(date);
+
 	return (
-		<div className={isYour ? s.message : s.your_mes}>
+		<div className={isYour ? s.your_mes : s.message}>
 			<div className={s.text}>{text}</div>
-			<div className={s.date}>4/12/12, 4.10 PM</div>
+			<div className={s.date}>
+				{day} {time}
+			</div>
 		</div>
 	);
 }

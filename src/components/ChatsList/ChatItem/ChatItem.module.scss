@@ -11,13 +11,13 @@
 
 	.ava {
 		background-color: $blue;
-		width: 3rem;
+		min-width: 3rem;
 		height: 3rem;
 		border-radius: 50%;
 	}
 	.info {
 		flex-grow: 1;
-		padding: 0 1rem;
+		padding-left: 1rem;
 		color: $black;
 
 		.name {
@@ -26,11 +26,17 @@
 			text-decoration: none;
 			color: $black;
 		}
+		.message {
+			max-height: 1.5rem;
+			overflow: hidden;
+		}
 	}
 	.date {
 		color: $black;
 
 		align-self: start;
+		width: 7rem;
+		text-align: right;
 	}
 }
 a {

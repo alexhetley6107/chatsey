@@ -1,0 +1,18 @@
+@import './../../../index.scss';
+
+.choose {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	p {
+		color: white;
+		background-color: $blue;
+		width: fit-content;
+		padding: 0.9rem 1.4rem;
+		padding-top: 0.5rem;
+		border-radius: 2rem;
+		font-size: 2rem;
+	}
+}
