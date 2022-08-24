@@ -7,9 +7,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import Chat from '../../models/chat';
 
-type Props = {};
+type Props = {
+	isHide: boolean;
+	hide: () => void;
+};
 
-export default function ChatsList({}: Props) {
+export default function ChatsList({ isHide, hide }: Props) {
 	const chats = useSelector((state: RootState) => state.chat.chats);
 
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -25,10 +28,10 @@ export default function ChatsList({}: Props) {
 
 	useEffect(() => {
 		handleSearch();
-	}, [search]);
+	}, [search, chats]);
 
 	return (
-		<div className={s.chatlist}>
+		<div className={isHide ? s.chatlistHide : s.chatlist}>
 			<div className={s.head}>
 				<div className={s.ava}></div>
 				<div className={s.input}>
@@ -42,9 +45,9 @@ export default function ChatsList({}: Props) {
 					/>
 				</div>
 			</div>
-			<p>Chats</p>
+			<p onClick={hide}>Chats</p>
 
-			<div className={s.chats}>
+			<div className={s.chats} onClick={hide}>
 				{searchChats.length > 0 ? (
 					searchChats.map((c: any) => <ChatItem chat={c} key={c.name} />)
 				) : (

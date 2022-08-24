@@ -1,7 +1,8 @@
 type Message = {
 	id: string;
 	text: string;
-	date: Date;
+	date: number | string;
+	// date: Date | string;
 	isYour: boolean;
 };
 

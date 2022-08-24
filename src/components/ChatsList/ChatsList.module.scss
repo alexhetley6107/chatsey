@@ -1,12 +1,23 @@
 @import './../../index.scss';
 
-.chatlist {
+.chatlist,
+.chatlistHide {
+	min-width: 25rem;
 	width: 25rem;
 	border-right: 2px solid $grey;
 	display: flex;
 	flex-direction: column;
 	max-height: fit-content;
+	overflow-x: hidden;
+	background-color: #fff;
 
+	@media (max-width: 800px) {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		min-width: 10rem;
+		z-index: 3;
+	}
 	.head {
 		background-color: $grey;
 		padding: 1rem;
@@ -53,5 +64,11 @@
 			border-radius: 20px;
 			border: 4px solid white;
 		}
+	}
+}
+
+.chatlistHide {
+	@media (max-width: 800px) {
+		transform: translateX(-100%);
 	}
 }

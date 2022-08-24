@@ -1,5 +1,9 @@
-const formatDate = (date: Date) => {
-	if (!date) return '';
+const formatDate = (input: string | number) => {
+	if (!input) return '';
+
+	let date: Date;
+
+	date = new Date(input);
 
 	const year = date?.getFullYear();
 	const day = date?.getDate();

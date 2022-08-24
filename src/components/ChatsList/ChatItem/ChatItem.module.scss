@@ -10,15 +10,40 @@
 	text-decoration: none;
 
 	.ava {
-		background-color: $blue;
-		min-width: 3rem;
-		height: 3rem;
-		border-radius: 50%;
+		position: relative;
+		// background-color: $blue;
+
+		div {
+			overflow: hidden;
+			min-width: 3rem;
+			max-width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		p {
+			position: absolute;
+			background-color: $blue;
+			color: white;
+			top: -12px;
+			right: -5px;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			font-size: 0.9rem;
+			text-align: center;
+		}
 	}
 	.info {
 		flex-grow: 1;
-		padding-left: 1rem;
+		padding-left: 0.6rem;
 		color: $black;
+		max-height: 3rem;
 
 		.name {
 			font-size: 1.2rem;
@@ -28,6 +53,7 @@
 		}
 		.message {
 			max-height: 1.5rem;
+			max-width: 11rem;
 			overflow: hidden;
 		}
 	}
@@ -35,7 +61,7 @@
 		color: $black;
 
 		align-self: start;
-		width: 7rem;
+		min-width: 7rem;
 		text-align: right;
 	}
 }
